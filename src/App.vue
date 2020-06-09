@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <lock/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import lock from './components/lock.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    lock
+  },
+  mounted(){
+    document.addEventListener('contextmenu', event => event.preventDefault());
   }
 }
 </script>
@@ -23,6 +25,14 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(60,60,65);
+}
+body, html {
+  padding: 0;
+  margin: 0;
 }
 </style>
